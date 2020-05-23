@@ -1,5 +1,6 @@
 package com.imatia.pruebatecnica.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -8,14 +9,13 @@ import javax.persistence.*;
 @Table(name="Order")
 public class Order {
 	@Id
-	@GeneratedValue
 	private Long id;
 
 	@OneToMany( mappedBy = "orderId")
 	private List<OrderState> states;
-	private int currentStateId;
 
 	public Order() {
+		this.states = new ArrayList<OrderState>();
 	}
 
 	public Long getId() {
@@ -32,13 +32,5 @@ public class Order {
 
 	public void setStates(List<OrderState> states) {
 		this.states = states;
-	}
-
-	public int getCurrentStateId() {
-		return currentStateId;
-	}
-
-	public void setCurrentStateId(int currentStateId) {
-		this.currentStateId = currentStateId;
 	}
 }

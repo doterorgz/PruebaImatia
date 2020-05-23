@@ -13,13 +13,13 @@ public class OrderState {
 	@Id @GeneratedValue
 	private Long id;
 	private Long orderId;
-	private int stateId;
+	private short stateId;
 	private Date stateUpdateDate;
 	
 	public OrderState() {
 		super();
 	}
-	public OrderState(Long orderId, int stateId, Date orderUpdateDate) {
+	public OrderState(Long orderId, short stateId, Date orderUpdateDate) {
 		super();
 		this.orderId = orderId;
 		this.stateId = stateId;
@@ -41,11 +41,11 @@ public class OrderState {
 		this.orderId = orderId;
 	}
 
-	public int getStateId() {
+	public short getStateId() {
 		return stateId;
 	}
 
-	public void setStateId(int stateId) {
+	public void setStateId(short stateId) {
 		this.stateId = stateId;
 	}
 

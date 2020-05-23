@@ -1,8 +1,9 @@
 package com.imatia.pruebatecnica.model.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class OrderTrackingDTO {
+public class OrderTrackingDTO implements Serializable {
 	private Long orderId;
 	private short trackingStatusId;
 	private Date changeStatusDate;
